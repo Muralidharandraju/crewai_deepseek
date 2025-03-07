@@ -1,9 +1,11 @@
 from crew import TopicIdentifier
 import streamlit as st
-from utils.preprocess import load_pdf,upload_pdf
+from utils.preprocess import load_pdf,upload_pdf,create_folder_if_not_exists
 import agentops
 from config import configure
 pdfs_directory = configure.temp_dir
+
+create_folder_if_not_exists(pdfs_directory)
 
 ## streamlit app
 st.title("Smart ATS")
